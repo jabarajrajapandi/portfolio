@@ -1,0 +1,104 @@
+#container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10vh;
+}
+.contactImage{
+  width: 30vh;
+  height: 30vh;
+  border-radius: 2vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.callButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-radius: 2.5vh;
+  background-image: linear-gradient(to right, #360033 0%, #0b8793 51%, #360033 100%);
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.callButton:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.mailButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 5vh;
+  padding: 1.5vh;
+  background-image: linear-gradient(to right, #525252 0%, #3d72b4 51%, #525252 100%);
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+
+.mailButton:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.textValue{
+  margin-bottom: 0;
+}
+.textValueEmail{
+  margin-bottom: 0;
+  margin-left: 2vh;
+}
+.callIcon{
+  margin-right: 2vh;
+}
+.copyIcon{
+  margin-right: 2vh;
+  margin-left: 2vh;
+}
+.socialIconRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 425px) {
+  .socialIconRow {
+    max-width: 100%;
+    flex-wrap: wrap;
+    /* Ensure wrapping for smaller devices */
+    justify-content: center;
+    gap: 2vh;
+    /* Increase spacing on smaller screens */
+  }
+}

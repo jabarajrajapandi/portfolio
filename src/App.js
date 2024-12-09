@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Provider, useSelector, useDispatch } from 'react-redux';
+import store from './redux/store';
+import { toggleTheme } from './redux/themeSlice';
+import WelcomeScreen from './screens/WelcomeScreen';
+import Home from './screens/Home';
+import Navbar from './screens/Navbar';
+import './css/App.css';
+import Contact from './screens/contact';
+
+function AppWrapper() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  );
+}
 
 function App() {
+  const theme = useSelector((state) => state.theme.theme);
+  const dispatch = useDispatch();
+
+  const appStyles = {
+    backgroundColor: theme === 'light' ? '#ffffff' : '#1e1e1e',
+    color: theme === 'light' ? '#000000' : '#ffffff',
+    // paddingLeft: '10vh',
+    // paddingRight: '2vh',
+    // paddingTop: '10.5vh',
+  };
+
+  const location = useLocation(); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={appStyles}>
+      {location.pathname !== '/' && <Navbar />}
+
+      <Routes>
+        <Route path="/" element={<WelcomeScreen />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/Home" />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default AppWrapper;

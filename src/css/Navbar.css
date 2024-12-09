@@ -1,0 +1,40 @@
+.logoImage {
+  width: 6.5vh;
+  height: 6.5vh;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.8), 0 0 20px rgba(128, 0, 128, 0.6);}
+
+.LogoName {
+  align-items: center;
+  margin-left: 2vh !important;
+}
+
+.bulbBGOn {
+  background-color: rgb(255, 250, 250);
+  padding: 1vh;
+  border-radius: 50%;
+  height: 5vh;
+  width: 5vh;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6);
+}
+
+.bulbBGOff {
+  background-color: rgb(199, 199, 199);
+  padding: 1vh;
+  border-radius: 50%;
+  height: 5vh;
+  width: 5vh;
+  box-shadow: 0 0 10px rgba(255, 0, 136, 0.8), 0 0 20px rgba(255, 51, 160, 0.8);
+}
+.drowerIcon{
+  margin-right: 2vh;
+}
+
+.MuiListItemIcon-root {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.MuiListItemIcon-root:hover {
+  transform: scale(1.2);
+}
