@@ -41,7 +41,7 @@ export default function Contact() {
     <div className="container-fluid">
       <div className="row" style={{ paddingTop: '8vh' }}>
         <div className="col-lg-12" id="container">
-          <img src={Logo} className="contactImage" />
+          <img src={Logo} alt="" className="contactImage" />
           <div
             className="callButton"
             onClick={() => window.location.href = 'tel:8220317251'}

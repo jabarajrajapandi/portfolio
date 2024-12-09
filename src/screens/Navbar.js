@@ -93,7 +93,7 @@ export default function DashboardLayout() {
 
 
 
-            <img src={Logo} className="logoImage" />
+            <img src={Logo} alt="" className="logoImage" />
             <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} className="LogoName">
               Jabaraj R
             </Typography>
