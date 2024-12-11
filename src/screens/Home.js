@@ -26,6 +26,10 @@ export default function Home() {
     window.open('https://github.com/jabaraj55', '_blank');
   };
 
+  const handleSkills = () => {
+    window.location.href = '/skills';
+  };
+
   const handleContact = () => {
     window.location.href = '/contact';
   };
@@ -54,7 +58,8 @@ export default function Home() {
 
 
 
-          <div data-text="Skills" style={{ '--r': '5', ...glassStyle }} className="glass">
+          <div data-text="Skills" style={{ '--r': '5', ...glassStyle }} className="glass"
+            onClick={handleSkills}>
             <svg viewBox="0 0 640 512" width="10vh" height="10vh" xmlns="http://www.w3.org/2000/svg" fill={svgFill}>
               <path
                 d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3zm226.2 60.9c4.6 4.6 4.6 12 0 16.5s-12 4.6-16.5 0L168.2 227.1l-41.7-41.7c-4.6-4.6-4.6-12 0-16.5s12-4.6 16.5 0l41.7 41.7 169.8-169.8c4.6-4.6 12-4.6 16.5 0z"

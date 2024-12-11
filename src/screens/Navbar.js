@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {CssBaseline,Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, AppBar, Typography, Box, Button, } from '@mui/material';
+import { CssBaseline, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, AppBar, Typography, Box, Button, } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import LayersIcon from '@mui/icons-material/Layers';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -19,8 +19,8 @@ import HomeIcon from '@mui/icons-material/Home';
 
 
 export default function DashboardLayout() {
-  const navigate = useNavigate(); 
-  const themeMode = useSelector((state) => state.theme.theme); 
+  const navigate = useNavigate();
+  const themeMode = useSelector((state) => state.theme.theme);
   const dispatch = useDispatch();
 
   const theme = createTheme({
@@ -33,7 +33,7 @@ export default function DashboardLayout() {
   const drawerWidth = 240;
 
   const handleDrawer = () => {
-    setDrawerOpen((prev)=> !prev)
+    setDrawerOpen((prev) => !prev)
   }
 
   const handleGitHub = () => {
@@ -41,11 +41,15 @@ export default function DashboardLayout() {
   };
 
   const handleHome = () => {
-    window.location.href='/Home'
+    window.location.href = '/Home'
   };
 
   const handleContact = () => {
     navigate('/contact'); // Use navigate for contact page
+  };
+
+  const handleSkills = () => {
+    navigate('/skills'); // Use navigate for contact page
   };
 
 
@@ -63,13 +67,17 @@ export default function DashboardLayout() {
       icon: <GitHubIcon />,
       onClick: handleGitHub,
     },
-    { title: 'Skills', icon: <CodeIcon />, path: '/orders' },
+    {
+      title: 'skills',
+      icon: <CodeIcon />,
+      onClick: handleSkills,
+    },
     {
       title: 'Contact',
       icon: <PermContactCalendarIcon />,
       onClick: handleContact,
     },
-    { title: 'Integrations', icon: <LayersIcon />, path: '/integrations' },
+    // { title: 'Integrations', icon: <LayersIcon />, path: '/integrations' },
   ];
 
 
@@ -83,7 +91,7 @@ export default function DashboardLayout() {
             <Button variant='containe' className='drowerIcon' onClick={handleDrawer}>
               {drawerOpen ?
                 <AlignHorizontalLeftIcon />
-              :
+                :
                 <MenuOpenIcon />
               }
 
@@ -144,7 +152,7 @@ export default function DashboardLayout() {
                     }
                   })}
                 >
-                 
+
                   <ListItemIcon
                     sx={{
                       transition: 'transform 0.3s ease',

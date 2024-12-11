@@ -8,6 +8,7 @@ import Home from './screens/Home';
 import Navbar from './screens/Navbar';
 import './css/App.css';
 import Contact from './screens/contact';
+import Skills from './screens/skills';
 
 function AppWrapper() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/" element={<WelcomeScreen />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/skills" element={<Skills />} />
         <Route path="*" element={<Navigate to="/Home" />} />
       </Routes>
     </div>
