@@ -63,7 +63,7 @@ export default function Home() {
             <p><span className="console-key">location</span> "Coimbatore, Tamil Nadu, India"</p>
             <p><span className="console-key">stack</span> ["React", "React Native", "Node.js", "ASP.NET", "SQL Server"]</p>
             <p><span className="console-key">currently</span> "Building MES 4.0 @ Cantier Systems"</p>
-            <p><span className="console-key">status</span> <span className="console-ok">200 OK — open to 12–24 LPA roles</span></p>
+            <p><span className="console-key">status</span> <span className="console-ok">200 OK — open to new opportunities`</span></p>
           </div>
         </div>
 
