@@ -1,175 +1,45 @@
-#container{
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-.animation-container {
+.boot-screen {
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  height: 60vh;
-  width: 60vh;
-  background-color: #edebeb;
-  overflow: hidden;
-  border-radius: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1vh;
-  box-shadow: 0 0 10px rgba(128, 0, 128, 0.352), 0 0 20px rgba(128, 0, 128, 0.406), 0 0 30px rgba(237, 76, 237, 0.425)
+  padding: 24px;
 }
 
-.Button {
+.boot-card {
+  padding: 48px 40px;
   text-align: center;
-  /* background-color: red; */
+  max-width: 380px;
+  width: 100%;
+}
+
+.boot-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.animated-image {
-  width: 30vh;
-  height: 30vh;
-  animation: bounce 1s infinite ease-in-out, fadeInOut 1s linear;
-  transition: transform 0.1s ease-in-out;
+.boot-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.btn-grad {
-  background-image: linear-gradient(to right, #3A1C71 0%, #D76D77 51%, #3A1C71 100%);
-  /* margin: 10px; */
-  padding: 1vh 6vh;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
+.boot-card .eyebrow {
+  justify-content: center;
+  margin-bottom: 14px;
 }
 
-.btn-grad:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
+.boot-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
 }
 
-
-
-
-
-@keyframes bounce {
-
-  0%,
-  30%,
-  60%,
-  80%,
-  100% {
-    transform: translateY(0) scale(1);
-    /* No scaling at the top */
-  }
-
-  30% {
-    transform: translateY(-50px) scale(1);
-    /* Bounce up */
-  }
-
-  60% {
-    transform: translateY(5px) scale(1);
-    /* Scale when near the bottom */
-  }
-
-  80% {
-    transform: translateY(5px) scale(1.35);
-    /* Scale when near the bottom */
-  }
-
-  100% {
-    transform: translateY(0) scale(1);
-    /* Return to normal size */
-  }
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@media (max-width: 1024px) {
-  .animation-container {
-    height: 50vh;
-    width: 50vh;
-    border-radius: 4vh;
-  }
-
-  .animated-image {
-    width: 25vh;
-    height: 25vh;
-  }
-
-  .btn-grad {
-    padding: 0.8vh 5vh;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .animation-container {
-    height: 40vh;
-    width: 40vh;
-    border-radius: 3vh;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #edebeb;
-    overflow: hidden;
-    margin-right: auto;
-    margin-top: 1vh;
-    box-shadow: 0 0 10px rgba(128, 0, 128, 0.352), 0 0 20px rgba(128, 0, 128, 0.406), 0 0 30px rgba(237, 76, 237, 0.425)
-  }
-
-  .animated-image {
-    width: 20vh;
-    height: 20vh;
-  }
-
-  .btn-grad {
-    padding: 0.7vh 4vh;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 425px) {
-  .animation-container {
-    height: 30vh;
-    width: 30vh;
-    border-radius: 2.5vh;
-    /* margin-left: 2vh !important; */
-  }
-
-  .animated-image {
-    width: 15vh;
-    height: 15vh;
-  }
-
-  .btn-grad {
-    padding: 0.5vh 3vh;
-    font-size: 0.75rem;
-  }
-
-  .Button {
-    font-size: 0.8rem;
-  }
+.boot-sub {
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  margin-bottom: 24px;
 }

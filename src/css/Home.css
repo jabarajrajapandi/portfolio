@@ -1,92 +1,110 @@
-:root {
-  --glass-background-light: linear-gradient(rgb(146, 146, 146), transparent);
-  /* Light gray background for light mode */
-  --glass-background-dark: linear-gradient(#2c2c2c, transparent);
-  /* Dark background for dark mode */
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.1);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.2);
-  --glass-shadow-light: 0 25px 25px rgba(0, 0, 0, 0.25);
-  --glass-shadow-dark: 0 25px 25px rgba(188, 188, 188, 0.25);
-  --glass-backdrop-light: blur(10px);
-  --glass-backdrop-dark: blur(8px);
-  --icon-fill-light: #8d8d8d;
-  --icon-fill-dark: #a6a6a6;
-  /* Light mode text color */
-  --text-color-dark: #fff;
-  /* Dark mode text color */
+.hero {
+  padding: 72px 24px 48px;
 }
 
-.containerMain {
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 18px 0 6px;
+}
+
+.hero-role {
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+}
+
+.hero-summary {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 88vh;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
-.container {
-  position: relative;
+.hero-console {
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.console-head {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  background: var(--bg-panel-2);
 }
 
-.container .glass {
-  position: relative;
-  width: 180px;
-  height: 200px;
-  background: var(--glass-background-light);
-  /* Light gray background for light mode */
-  border: var(--glass-border-light);
-  box-shadow: var(--glass-shadow-light);
+.console-dots {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 10px;
-  margin: 0 -45px;
-  backdrop-filter: var(--glass-backdrop-light);
-  transform: rotate(calc(var(--r) * 1deg));
+  gap: 5px;
 }
 
-.container:hover .glass {
-  transform: rotate(0deg);
-  margin: 0 10px;
+.console-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  display: block;
 }
 
-.container .glass::before {
-  content: attr(data-text);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-color-light);
+.console-body {
+  padding: 18px 16px;
+  font-size: 0.85rem;
+  line-height: 1.9;
 }
 
-.container .glass svg {
-  font-size: 2.5em;
-  fill: var(--icon-fill-light);
+.console-key {
+  color: var(--accent);
+  margin-right: 10px;
 }
 
-/* Dark mode overrides */
-[data-theme='dark'] .container .glass {
-  background: var(--glass-background-dark);
-  border: var(--glass-border-dark);
-  box-shadow: var(--glass-shadow-dark);
-  backdrop-filter: var(--glass-backdrop-dark);
+.console-ok {
+  color: var(--accent-2);
 }
 
-[data-theme='dark'] .container .glass::before {
-  color: var(--text-color-dark);
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 }
 
-[data-theme='dark'] .container .glass svg {
-  fill: var(--icon-fill-dark);
+.stat {
+  padding: 16px;
 }
 
-[data-theme='dark'] .container .glass::before {
-  background: rgba(255, 255, 255, 0.1);
+.stat-value {
+  font-size: 1.35rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

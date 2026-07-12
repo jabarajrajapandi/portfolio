@@ -1,104 +1,44 @@
-#container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 10vh;
+.contact-lede {
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 32px;
 }
-.contactImage{
-  width: 30vh;
-  height: 30vh;
-  border-radius: 2vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
-.callButton {
+
+.contact-row {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  padding-left: 2vh;
-  padding-right: 2vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  border-radius: 2.5vh;
-  background-image: linear-gradient(to right, #360033 0%, #0b8793 51%, #360033 100%);
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  transition: 0.5s;
+  gap: 12px;
+  padding: 18px 20px;
   cursor: pointer;
-}
-
-.callButton:hover {
-  background-position: right center;
-  color: #fff;
   text-decoration: none;
-}
-.mailButton {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  border-radius: 5vh;
-  padding: 1.5vh;
-  background-image: linear-gradient(to right, #525252 0%, #3d72b4 51%, #525252 100%);
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  transition: 0.5s;
-  cursor: pointer;
-  margin-left: 2vh;
-  margin-right: 2vh;
+  color: var(--text);
+  transition: border-color 0.2s ease, transform 0.15s ease;
 }
 
-.mailButton:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
-}
-.textValue{
-  margin-bottom: 0;
-}
-.textValueEmail{
-  margin-bottom: 0;
-  margin-left: 2vh;
-}
-.callIcon{
-  margin-right: 2vh;
-}
-.copyIcon{
-  margin-right: 2vh;
-  margin-left: 2vh;
-}
-.socialIconRow{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+.contact-row:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
-
-
-
-
-
-
-@media (max-width: 1024px) {
-
+.copy-icon {
+  margin-left: auto;
+  opacity: 0.6;
+  font-size: 1rem !important;
 }
 
-@media (max-width: 768px) {
-
+.copy-icon:hover {
+  opacity: 1;
 }
 
-@media (max-width: 425px) {
-  .socialIconRow {
-    max-width: 100%;
-    flex-wrap: wrap;
-    /* Ensure wrapping for smaller devices */
-    justify-content: center;
-    gap: 2vh;
-    /* Increase spacing on smaller screens */
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }

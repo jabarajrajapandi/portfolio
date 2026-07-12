@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import androidStudio from '../assets/AppIcons/androidStudio.png';
 import bootstrap from '../assets/AppIcons/bootstrap.png';
@@ -15,83 +14,42 @@ import xcode from '../assets/AppIcons/xcode.png';
 
 import '../css/Welcome.css';
 
-export default function WelcomeScreen() {
-  const imageList = [
-    androidStudio,
-    gradle,
-    xcode,
-    react,
-    node,
-    mysql,
-    git,
-    javascript,
-    bootstrap,
-    css,
-    html,
-  ];
+const imageList = [androidStudio, gradle, xcode, react, node, mysql, git, javascript, bootstrap, css, html];
 
+export default function WelcomeScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [timer, setTimer] = useState(15);
-  const [isTimerActive, setIsTimerActive] = useState(false);
+  const [timer, setTimer] = useState(3);
   const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageList.length);
-    }, 2000); 
+      setCurrentIndex((prev) => (prev + 1) % imageList.length);
+    }, 900);
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    setIsTimerActive(true);
-  }, []);
-
-  useEffect(() => {
-    let interval;
-    if (isTimerActive && timer > 0) {
-      interval = setInterval(() => {
-        setTimer((prev) => prev - 1);
-      }, 1000);
-    } else if (timer === 0) {
-      window.location.href = '/home'; 
+    if (timer <= 0) {
+      navigate('/home');
+      return;
     }
-    return () => clearInterval(interval);
-  }, [isTimerActive, timer]);
-
-  const handleGoButtonClick = () => {
-    setTimer(0)
-    setIsTimerActive(true);
-    window.location.href = '/home';
-  };
-
+    const t = setInterval(() => setTimer((p) => p - 1), 1000);
+    return () => clearInterval(t);
+  }, [timer, navigate]);
 
   return (
-    <>
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-12" id="container">
-            <div className="animation-container">
-              <img
-                src={imageList[currentIndex]}
-                alt="Animated Icon"
-                className="animated-image"
-              />
-            </div>
-
-            <div className="Button">
-              <Typography className='my-5' variant="h5" gutterBottom>
-                Countdown: {timer}
-              </Typography>
-              <button
-                className="btn-grad"
-                onClick={handleGoButtonClick}
-              >
-                Explore
-              </button>
-            </div>
+    <div className="boot-screen">
+      <div className="boot-card panel">
+        <div className="boot-icon">
+          <img src={imageList[currentIndex]} alt="tech stack icon" />
         </div>
+        <p className="eyebrow"><span className="status-dot" />BOOTING PORTFOLIO</p>
+        <h1 className="boot-title">Jabaraj R</h1>
+        <p className="boot-sub mono">loading modules… {timer}s</p>
+        <button className="btn btn-solid" onClick={() => navigate('/home')}>
+          Skip →
+        </button>
       </div>
     </div>
-    </>
   );
 }

@@ -1,0 +1,76 @@
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.log-entry {
+  padding: 24px;
+}
+
+.log-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.log-role {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.log-company {
+  color: var(--accent);
+  font-size: 0.92rem;
+  margin-top: 2px;
+}
+
+.log-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.log-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.log-tag-active {
+  color: var(--accent-2);
+}
+
+.log-period {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.log-blurb {
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.log-points {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 0.94rem;
+}
+
+.log-points li {
+  margin-bottom: 6px;
+}
+
+.log-points li::marker {
+  color: var(--accent);
+}

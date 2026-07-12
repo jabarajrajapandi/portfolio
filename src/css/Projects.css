@@ -1,0 +1,74 @@
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.proj-card {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.proj-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.proj-head {
+  margin-bottom: 10px;
+}
+
+.proj-head h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.proj-role {
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.proj-blurb {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.proj-points {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.proj-points li::marker {
+  color: var(--accent-2);
+}
+
+.proj-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.chip {
+  font-size: 0.68rem;
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+@media (max-width: 720px) {
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+}

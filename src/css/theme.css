@@ -1,0 +1,186 @@
+/* ============================================================
+   DESIGN TOKENS
+   Direction: "shop-floor console" — grounded in the fact that
+   Jabaraj builds real-time MES monitoring dashboards. The site
+   borrows the visual language of an industrial status panel:
+   mono data labels, status dots, bracketed module headers,
+   log-style entries — rather than generic glassmorphism.
+   ============================================================ */
+
+:root,
+[data-theme='dark'] {
+  --bg: #0c0f13;
+  --bg-panel: #12161c;
+  --bg-panel-2: #191f27;
+  --border: #262d37;
+  --border-strong: #3a4452;
+  --text: #eae7e0;
+  --text-dim: #838d9c;
+  --text-faint: #545e6c;
+  --accent: #f2a93b;
+  --accent-soft: rgba(242, 169, 59, 0.14);
+  --accent-2: #34d0a0;
+  --accent-2-soft: rgba(52, 208, 160, 0.14);
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='light'] {
+  --bg: #f3f1ea;
+  --bg-panel: #ffffff;
+  --bg-panel-2: #ebe8df;
+  --border: #d9d4c7;
+  --border-strong: #bfb9a8;
+  --text: #1c1d1b;
+  --text-dim: #5c6068;
+  --text-faint: #8a8d92;
+  --accent: #c67d1c;
+  --accent-soft: rgba(198, 125, 28, 0.12);
+  --accent-2: #0f9d74;
+  --accent-2-soft: rgba(15, 157, 116, 0.12);
+  --shadow: 0 20px 40px rgba(28, 29, 27, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.site {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 3px var(--accent-2-soft);
+  animation: pulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-head h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-index {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+}
+
+.btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  padding: 12px 20px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14161a;
+  font-weight: 600;
+}
+
+.btn-solid:hover {
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 44px 18px;
+  }
+  .section-head h2 {
+    font-size: 1.35rem;
+  }
+}
